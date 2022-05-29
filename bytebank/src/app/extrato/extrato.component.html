@@ -1,2 +1,14 @@
-<p>Valor: {{ transferencia?.Valor }}</p>
-<p>Destino: {{ transferencia?.Destino }}</p>
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho__conteudo">Valor</th>
+    <th class="tabela__cabecalho__conteudo">Destino</th>
+    <th class="tabela__cabecalho__conteudo">Data</th>
+  </thead>
+  <tbody>
+    <tr class="tabela__linha" *ngFor="let transferencia of transferencias">
+      <td class="tabela__conteudo">{{ transferencia?.data | date: "short" }}</td>
+      <td class="tabela__conteudo">{{ transferencia?.Valor | currency }}</td>
+      <td class="tabela__conteudo">{{ transferencia?.Destino }}</td>
+    </tr>
+  </tbody>
+</table>
